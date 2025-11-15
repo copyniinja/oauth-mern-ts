@@ -112,3 +112,22 @@
 [2025-11-15 07:58:58] ERROR: User already exists
 [2025-11-15 07:59:09] INFO: New user(admin2@gmail.com) is created.
 [2025-11-15 08:00:33] WARN: Received SIGINT.Starting graceful shutdown...
+[2025-11-15 14:32:05] INFO: Mongodb connected
+[2025-11-15 14:32:05] INFO: Server is listening on port:3000
+[2025-11-15 14:34:53] INFO: Mongodb connected
+[2025-11-15 14:34:53] INFO: Server is listening on port:3000
+[2025-11-15 14:36:04] INFO: Mongodb connected
+[2025-11-15 14:36:04] INFO: Server is listening on port:3000
+[2025-11-15 14:36:25] INFO: Mongodb connected
+[2025-11-15 14:36:25] INFO: Server is listening on port:3000
+[2025-11-15 14:36:45] INFO: Mongodb connected
+[2025-11-15 14:36:45] INFO: Server is listening on port:3000
+[2025-11-15 14:37:00] INFO: Mongodb connected
+[2025-11-15 14:37:00] INFO: Server is listening on port:3000
+[2025-11-15 14:38:43] INFO: Mongodb connected
+[2025-11-15 14:38:43] INFO: Server is listening on port:3000
+[2025-11-15 14:39:08] INFO: Mongodb connected
+[2025-11-15 14:39:08] INFO: Server is listening on port:3000
+[2025-11-15 14:39:41] INFO: Mongodb connected
+[2025-11-15 14:39:41] INFO: Server is listening on port:3000
+[2025-11-15 14:41:45] WARN: Received SIGINT.Starting graceful shutdown...

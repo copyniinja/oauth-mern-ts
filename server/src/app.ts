@@ -2,6 +2,7 @@ import compression from "compression";
 import cookieParser from "cookie-parser";
 import express from "express";
 import helmet from "helmet";
+import passport from "./lib/passport.lib";
 import { corsMiddleware } from "./middlewares/cors.middleware";
 import { errorMiddleware } from "./middlewares/error.middleware";
 import { morganMiddleware } from "./middlewares/morgan.middleware";
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(compression({ threshold: 1024 }));
 app.use(rateLimitMiddleware());
+app.use(passport.initialize());
 
 // Routes
 app.use("/api/v1", v1Routes);
