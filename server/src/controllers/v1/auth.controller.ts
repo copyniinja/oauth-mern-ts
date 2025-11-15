@@ -32,11 +32,11 @@ export async function login(req: Request, res: Response, next: NextFunction) {
       }
       // Generate access and refresh token
       const accessToken = generateToken(
-        { userId: user._id, ...user },
+        { userId: user._id, email: user.email, role: user.role },
         "ACCESS"
       );
       const refreshToken = generateToken(
-        { userId: user._id, ...user },
+        { userId: user._id, email: user.email, role: user.role },
         "REFRESH"
       );
       res.cookie("refresh", refreshToken, {

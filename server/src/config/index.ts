@@ -10,4 +10,7 @@ export const config = {
     process.env.ACCESS_TOKEN_SECRET || "9beaf9c3dc9a0596612bf5dd57779be7",
   REFRESH_TOKEN_SECRET:
     process.env.REFRESH_TOKEN_SECRET || "f040f4f6378a9c76ef19c04c551c2818",
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET!,
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID!,
+  CALLBACK_URL: process.env.CALLBACK_URL!,
 };
