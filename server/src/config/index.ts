@@ -6,4 +6,8 @@ export const config = {
   MONGO_URI: process.env.MONGO_URI!,
   ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS?.split(",") || [],
   ADMIN_LIST: process.env.ADMIN_LIST?.split(",") || [],
+  ACCESS_TOKEN_SECRET:
+    process.env.ACCESS_TOKEN_SECRET || "9beaf9c3dc9a0596612bf5dd57779be7",
+  REFRESH_TOKEN_SECRET:
+    process.env.REFRESH_TOKEN_SECRET || "f040f4f6378a9c76ef19c04c551c2818",
 };
