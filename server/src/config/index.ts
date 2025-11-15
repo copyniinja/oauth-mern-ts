@@ -5,4 +5,5 @@ export const config = {
   PORT: process.env.PORT || "3000",
   MONGO_URI: process.env.MONGO_URI!,
   ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS?.split(",") || [],
+  ADMIN_LIST: process.env.ADMIN_LIST?.split(",") || [],
 };

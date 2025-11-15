@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import logger from "server/src/lib/winston.lib";
+import { createUser } from "server/src/services/user.service";
 
 /**
  * Handles user login process
@@ -17,8 +19,22 @@ export async function login() {}
  * @param res Response object
  * @returns 201 success JSON response
  * @throws 500 Internal server error for database
- * @throws 400 If user already exists
  */
 export async function register(req: Request, res: Response) {
-  res.json(req.body);
+  try {
+    // Creating new user
+    const newUser = await createUser(req.body);
+    logger.info(`New user(${newUser.email}) is created.`);
+    // JSON response
+    res.status(201).json({
+      success: true,
+      message: "User created successfully",
+      user: newUser,
+    });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Internal server error";
+    logger.error(error);
+    res.status(500).json({ success: false, message });
+  }
 }
