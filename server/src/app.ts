@@ -1,8 +1,9 @@
 import compression from "compression";
 import cookieParser from "cookie-parser";
-import express from "express";
+import express, { Request, Response } from "express";
 import helmet from "helmet";
 import passport from "./lib/passport.lib";
+import { authenticateMiddleware } from "./middlewares/authenticate.middleware";
 import { corsMiddleware } from "./middlewares/cors.middleware";
 import { errorMiddleware } from "./middlewares/error.middleware";
 import { morganMiddleware } from "./middlewares/morgan.middleware";
@@ -26,6 +27,20 @@ app.use(passport.initialize());
 
 // Routes
 app.use("/api/v1", v1Routes);
+
+/*
+// Private routes (TODO: Delete it)--------
+*/
+app.get(
+  "/api/v1/profile",
+  authenticateMiddleware,
+  (req: Request, res: Response) => {
+    res.json({ userId: req.userId });
+  }
+);
+/* 
+--------------------------------------------
+*/
 
 // Not Found middleware
 app.use(notFoundMiddleware());

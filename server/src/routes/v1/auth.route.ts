@@ -1,7 +1,9 @@
 import { Router } from "express";
+import { config } from "server/src/config";
 import { AuthController } from "server/src/controllers/v1";
 import { generateToken, IUserPayload } from "server/src/lib/jwt.lib";
 import { validateMiddleware } from "server/src/middlewares/validate.middleware";
+import { registerToken } from "server/src/services/token.service";
 import { registerUserSchema } from "server/src/validators/user.validator";
 import passport from "./../../lib/passport.lib";
 
@@ -48,26 +50,51 @@ router.get(
     failureRedirect: "/login",
     session: false,
   }),
-  (req, res) => {
-    // Failed to login
-    if (!req.user) {
-      return res.status(400).json({ success: false, message: "Login failed" });
-    }
-    const payload: IUserPayload = {
-      email: req.user.email,
-      role: req.user.role,
-      userId: req.user._id,
-    };
-    // Generate tokens
-    const accessToken = generateToken(payload, "ACCESS");
-    const refreshToken = generateToken(payload, "REFRESH");
-    // Set refresh token inside http only cookie
-    res.cookie("refresh", refreshToken, {
-      httpOnly: true,
-      maxAge: 3600 * 24 * 2,
-    });
+  async (req, res, next) => {
+    try {
+      // No user? Reject.
+      if (!req.user) {
+        return res
+          .status(400)
+          .json({ success: false, message: "Login failed" });
+      }
 
-    res.json({ success: true, accessToken, message: "Logged In" });
+      const payload: IUserPayload = {
+        email: req.user.email,
+        role: req.user.role,
+        userId: req.user._id,
+      };
+
+      // Token generation
+      const accessToken = generateToken(payload, "ACCESS");
+      const refreshToken = generateToken(payload, "REFRESH");
+
+      // Save refresh token in DB
+      await registerToken(req.user._id, refreshToken);
+
+      // Set refresh token in HTTP-only cookie
+      res.cookie("refresh", refreshToken, {
+        httpOnly: true,
+        secure: config.NODE_ENV === "production",
+        sameSite: "strict",
+        maxAge: 3600 * 24 * 2,
+      });
+
+      return res.json({
+        success: true,
+        accessToken,
+        message: "Logged In",
+      });
+    } catch (error) {
+      next(error);
+    }
   }
 );
+
+/**
+ * @route GET /api/v1/auth/refresh
+ * @description Refresh Access token
+ * @access Public
+ */
+router.get("/refresh", AuthController.renewAccessToken);
 export default router;

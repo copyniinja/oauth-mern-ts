@@ -32,6 +32,7 @@ export type Token = "ACCESS" | "REFRESH";
  * @throws Error if jwt_secret is not set
  */
 export function generateToken(userDetails: IUserPayload, type: Token) {
+  const { exp, iat, sub, ...safePayload } = userDetails;
   const options: SignOptions = {
     expiresIn: type === "ACCESS" ? ACCESS_TOKEN_EXPIRY : REFRESH_TOKEN_EXPIRY,
     subject: type,
@@ -39,7 +40,7 @@ export function generateToken(userDetails: IUserPayload, type: Token) {
   const secretKey =
     type === "ACCESS" ? ACCESS_TOKEN_SECRET : REFRESH_TOKEN_SECRET;
   try {
-    return jwt.sign(userDetails, secretKey, options);
+    return jwt.sign(safePayload, secretKey, options);
   } catch (error) {
     const message = error instanceof Error ? error.message : error;
     logger.error(message);

@@ -190,3 +190,43 @@
 [2025-11-15 19:19:25] INFO: Mongodb connected
 [2025-11-15 19:19:25] INFO: Server is listening on port:3000
 [2025-11-15 19:22:01] WARN: Received SIGINT.Starting graceful shutdown...
+[2025-11-16 19:33:55] INFO: Mongodb connected
+[2025-11-16 19:33:55] INFO: Server is listening on port:3000
+[2025-11-16 19:41:22] WARN: Received SIGINT.Starting graceful shutdown...
+[2025-11-16 20:00:35] INFO: Mongodb connected
+[2025-11-16 20:00:35] INFO: Server is listening on port:3000
+[2025-11-16 20:06:04] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:06:04] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:06:21] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:06:21] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:06:22] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:06:22] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:07:02] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:07:02] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:11:06] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:11:06] ERROR: Bad "options.expiresIn" option the payload already has an "exp" property.
+[2025-11-16 20:12:55] INFO: Mongodb connected
+[2025-11-16 20:12:55] INFO: Server is listening on port:3000
+[2025-11-16 20:13:00] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:00] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:03] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:03] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:08] WARN: Received SIGINT.Starting graceful shutdown...
+[2025-11-16 20:13:18] ERROR: Force exiting after timeouts.
+[2025-11-16 20:13:18] INFO: Mongodb connected
+[2025-11-16 20:13:18] INFO: Server is listening on port:3000
+[2025-11-16 20:13:19] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:19] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:21] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:13:21] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:14:50] INFO: Mongodb connected
+[2025-11-16 20:14:50] INFO: Server is listening on port:3000
+[2025-11-16 20:15:23] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:15:23] ERROR: Bad "options.subject" option. The payload already has an "sub" property.
+[2025-11-16 20:15:38] INFO: Mongodb connected
+[2025-11-16 20:15:38] INFO: Server is listening on port:3000
+[2025-11-16 20:24:36] INFO: Mongodb connected
+[2025-11-16 20:24:36] INFO: Server is listening on port:3000
+[2025-11-16 20:24:51] INFO: Mongodb connected
+[2025-11-16 20:24:51] INFO: Server is listening on port:3000
+[2025-11-16 20:29:19] WARN: Received SIGINT.Starting graceful shutdown...
