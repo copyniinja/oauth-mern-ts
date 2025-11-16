@@ -8,6 +8,8 @@ declare global {
     }
 
     interface Request {
+      userId: Types.ObjectId;
+      role: "ADMIN" | "CUSTOMER" | "SELLER";
       user?: User;
     }
   }
