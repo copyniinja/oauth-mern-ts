@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "start:client": "npm run dev --prefix client"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
