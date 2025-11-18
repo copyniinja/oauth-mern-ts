@@ -11,9 +11,12 @@ import MainLayout from "../layouts/MainLayout";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
+      {/* Public routes */}
       <Route index element={<h1>Homepage</h1>} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+
+      {/* Protected routes */}
     </Route>
   )
 );

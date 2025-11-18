@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start:dev": "nodemon",
+    "start:server": "nodemon",
     "start:client": "npm run dev --prefix client"
   },
   "dependencies": {
