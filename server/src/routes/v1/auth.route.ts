@@ -80,11 +80,10 @@ router.get(
         maxAge: 3600 * 24 * 2,
       });
 
-      return res.json({
-        success: true,
-        accessToken,
-        message: "Logged In",
-      });
+      // TODO:FIX it
+      return res.redirect(
+        `http://localhost:5173/auth/success?accessToken=${accessToken}`
+      );
     } catch (error) {
       next(error);
     }
@@ -98,3 +97,5 @@ router.get(
  */
 router.get("/refresh", AuthController.renewAccessToken);
 export default router;
+
+router.get("/me", AuthController.getUserProfile);

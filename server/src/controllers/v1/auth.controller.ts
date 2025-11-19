@@ -5,7 +5,7 @@ import { config } from "server/src/config";
 import { compareHashString } from "server/src/lib/bcrypt.lib";
 import { generateToken, verifyToken } from "server/src/lib/jwt.lib";
 import logger from "server/src/lib/winston.lib";
-import { IUser } from "server/src/models/user.model";
+import User, { IUser } from "server/src/models/user.model";
 import {
   getTokenByUserId,
   registerToken,
@@ -172,5 +172,46 @@ export async function renewAccessToken(req: Request, res: Response) {
     logger.error(message);
     const status = error.status || 500;
     res.status(status).json({ success: false, message });
+  }
+}
+
+export async function getUserProfile(req: Request, res: Response) {
+  try {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res
+        .status(401)
+        .json({ success: false, message: "No access token provided" });
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    // Verify access token
+    let payload;
+    try {
+      payload = verifyToken(token, "ACCESS");
+    } catch (err) {
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid or expired access token" });
+    }
+
+    // Fetch user
+    const user = await User.findById(payload.userId).select("-password");
+
+    if (!user) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
+    }
+
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    logger.error(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 }

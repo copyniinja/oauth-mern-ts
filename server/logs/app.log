@@ -230,3 +230,35 @@
 [2025-11-16 20:24:51] INFO: Mongodb connected
 [2025-11-16 20:24:51] INFO: Server is listening on port:3000
 [2025-11-16 20:29:19] WARN: Received SIGINT.Starting graceful shutdown...
+[2025-11-19 11:10:21] INFO: Mongodb connected
+[2025-11-19 11:10:21] INFO: Server is listening on port:3000
+[2025-11-19 11:27:53] INFO: Mongodb connected
+[2025-11-19 11:27:53] INFO: Server is listening on port:3000
+[2025-11-19 11:28:06] INFO: Mongodb connected
+[2025-11-19 11:28:06] INFO: Server is listening on port:3000
+[2025-11-19 11:30:01] INFO: Mongodb connected
+[2025-11-19 11:30:01] INFO: Server is listening on port:3000
+[2025-11-19 11:31:21] INFO: Mongodb connected
+[2025-11-19 11:31:21] INFO: Server is listening on port:3000
+[2025-11-19 11:31:53] INFO: Mongodb connected
+[2025-11-19 11:31:53] INFO: Server is listening on port:3000
+[2025-11-19 11:32:00] INFO: Mongodb connected
+[2025-11-19 11:32:00] INFO: Server is listening on port:3000
+[2025-11-19 11:32:05] INFO: Mongodb connected
+[2025-11-19 11:32:05] INFO: Server is listening on port:3000
+[2025-11-19 11:38:53] INFO: Mongodb connected
+[2025-11-19 11:38:53] INFO: Server is listening on port:3000
+[2025-11-19 11:39:19] INFO: Mongodb connected
+[2025-11-19 11:39:19] INFO: Server is listening on port:3000
+[2025-11-19 11:44:09] INFO: Mongodb connected
+[2025-11-19 11:44:09] INFO: Server is listening on port:3000
+[2025-11-19 12:30:22] INFO: New user(admin2@gmail.com) is created.
+[2025-11-19 12:45:09] INFO: New user(admin3@gmail.com) is created.
+[2025-11-19 12:56:32] INFO: New user(lol@gmail.com) is created.
+[2025-11-19 12:57:15] ERROR: User already exists
+[2025-11-19 12:58:27] ERROR: User already exists
+[2025-11-19 12:58:31] ERROR: User already exists
+[2025-11-19 13:02:46] ERROR: User already exists
+[2025-11-19 13:04:48] ERROR: User already exists
+[2025-11-19 13:33:16] INFO: Mongodb connected
+[2025-11-19 13:33:16] INFO: Server is listening on port:3000

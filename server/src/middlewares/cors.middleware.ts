@@ -30,6 +30,7 @@ const corsOptions: CorsOptions = {
       );
     }
   },
+  credentials: true,
 };
 
 // Handle cors
